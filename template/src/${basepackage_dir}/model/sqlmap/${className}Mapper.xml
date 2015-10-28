@@ -1,0 +1,66 @@
+<#include "/macro.include"/>
+<#assign className = table.className>   
+<#assign classNameLower = className?uncap_first> 
+<#assign ldelim = "{"> 
+<#assign rdelim = "}"> 
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="com.daoman.im.dao.${className}Dao">
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="commonColumns">
+	    <![CDATA[
+        <#list table.columns as column>
+        	${column.sqlName} as ${column.columnNameLower} <#if column_has_next>,</#if>
+        </#list>
+	    ]]>
+	</sql>
+    
+	<!-- 新增记录 -->
+	<insert id="insert" parameterType="com.daoman.im.model.${className}" useGeneratedKeys="true" keyProperty="<#list table.columns as column><#if column.pk>${column.columnNameLower}</#if></#list>" >
+    <![CDATA[
+        INSERT INTO ${table.sqlName} (
+        <#list table.columns as column>
+        	${column.sqlName} <#if column_has_next>,</#if>
+        </#list>
+        ) VALUES (
+        <#list table.columns as column>
+        	#${ldelim}${column.columnNameLower}${rdelim} <#if column_has_next>,</#if>
+        </#list>        
+        )
+    ]]>
+        <selectKey resultType="java.lang.Long" keyProperty="<#list table.columns as column><#if column.pk>${column.columnNameLower}</#if></#list>" >
+            select last_insert_id()
+        </selectKey>
+    </insert>
+	
+	<!-- 更新记录 -->
+	<update id="updateById" parameterType="com.daoman.im.model.${className}">
+        UPDATE ${table.sqlName}
+        <set>
+			<#list table.columns as column>
+	        <#if !column.pk>
+	        <if test="${column.columnNameLower} != null">
+				${column.sqlName} = #${ldelim}${column.columnNameLower}${rdelim},
+			</if>
+	        </#if>
+	        </#list>
+		</set>
+	    <![CDATA[ WHERE 
+        	<#list table.compositeIdColumns as column>
+	        ${column.sqlName} = #${ldelim}${column.columnNameLower}${rdelim} <#if column_has_next>,</#if>
+	        </#list>
+        ]]>
+    </update>
+
+	<!-- 根据主键查询 -->
+    <select id="getById" parameterType="java.lang.Long" resultType="com.daoman.im.model.${className}">
+	    select <include refid="commonColumns"/>
+	    <![CDATA[ from ${table.sqlName} where 
+				<#list table.compositeIdColumns as column>
+		        ${column.sqlName} = #${ldelim}${column.columnNameLower}${rdelim} <#if column_has_next>,</#if>
+		        </#list>
+	    ]]>
+    </select>
+
+</mapper>
