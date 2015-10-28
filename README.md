@@ -1,4 +1,11 @@
 # rapid-framework-easy
+****************
+* UTF-8 Encoding
+****************
+
+修改整个项目的属性为UTF-8编码
+项目搭建请查看doc/guide.html
+项目网站:http://code.google.com/p/rapid-framework/
 
 基于spring,struts(struts2),hibernate的web项目脚手架
 
