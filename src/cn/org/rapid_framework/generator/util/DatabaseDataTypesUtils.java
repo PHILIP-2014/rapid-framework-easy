@@ -71,7 +71,7 @@ public class DatabaseDataTypesUtils {
 	}
 		   
    static {
-      _preferredJavaTypeForSqlType.put(Types.TINYINT, "Byte");
+      _preferredJavaTypeForSqlType.put(Types.TINYINT, "Integer");
       _preferredJavaTypeForSqlType.put(Types.SMALLINT, "Short");
       _preferredJavaTypeForSqlType.put(Types.INTEGER, "Integer");
       _preferredJavaTypeForSqlType.put(Types.BIGINT, "Long");

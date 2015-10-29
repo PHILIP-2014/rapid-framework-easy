@@ -1,4 +1,4 @@
-# rapid-framework-easy
+rapid-framework-easy
 ****************
 * UTF-8 Encoding
 ****************
@@ -26,3 +26,4 @@ Java日期转换的特殊处理,与My97DatePicker集成
 公共类库友好的包名javacommon
 整个项目尽量做到最小集,无需删除任何资源,拿来即可使用.
 友好的MIT-Licence
+
