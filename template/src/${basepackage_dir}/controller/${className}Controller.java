@@ -3,11 +3,12 @@
 <#assign actionExtension = "do">
 package ${basepackage}.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 @Controller
-@RequestMapping("/${classNameLower}")
 public class ${className}Controller {
 
-	@Resource
+	@Autowired
 	private ${className}Service ${classNameLower}Service;
 	
 }

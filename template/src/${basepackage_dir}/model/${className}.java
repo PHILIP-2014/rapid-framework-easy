@@ -6,9 +6,8 @@ package ${basepackage}.model;
 /**
  * ${table.tableAlias}
  */
-public class ${className} implements java.io.Serializable {
+public class ${className} implements Base {
 		
-	//date formats
 	/**
 	 * 
 	 */
@@ -19,12 +18,10 @@ public class ${className} implements java.io.Serializable {
 	</#if>
 	</#list>
 	
-	//columns START
 	<#list table.columns as column>
 	/**${column.columnAlias}*/
 	private ${column.javaType} ${column.columnNameLower};
 	</#list>
-	//columns END
 
 <@generateConstructor className/>
 <@generateJavaColumns/>

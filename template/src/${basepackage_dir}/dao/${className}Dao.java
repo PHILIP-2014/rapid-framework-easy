@@ -4,9 +4,9 @@ package ${basepackage}.dao;
 
 public interface ${className}Dao {
 	
-	${className} getById(${table.idColumn.javaType} ${classNameLower});
+	${className} queryOne(${table.idColumn.javaType} ${classNameLower});
 
-	Integer save(${className} ${classNameLower});
+	Integer insert(${className} ${classNameLower});
 
 	void update(${className} ${classNameLower});
 	
