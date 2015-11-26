@@ -8,10 +8,8 @@
 package cn.org.rapid_framework.generator.provider.java.model;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.TypeVariable;
 import java.util.ArrayList;
 import java.util.List;
-
 
 import cn.org.rapid_framework.generator.util.StringHelper;
 

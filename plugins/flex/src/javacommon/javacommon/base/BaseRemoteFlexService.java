@@ -7,9 +7,6 @@ import java.util.List;
 import cn.org.rapid_framework.beanutils.BeanUtils;
 import cn.org.rapid_framework.flex.messaging.io.CglibBeanProxy;
 import cn.org.rapid_framework.page.Page;
-import cn.org.rapid_framework.util.HibernateBeanSerializer;
-import flex.messaging.io.BeanProxy;
-import flex.messaging.io.PropertyProxyRegistry;
 
 public class BaseRemoteFlexService <E>{
 	

@@ -6,7 +6,6 @@ import java.util.Map;
 import javacommon.mail.BaseMailer;
 
 import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Component;
 
 import cn.org.rapid_framework.mail.SimpleMailMessageUtils;

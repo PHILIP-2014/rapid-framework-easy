@@ -12,11 +12,6 @@ public class ${className} implements Base {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	<#list table.columns as column>
-	<#if column.isDateTimeColumn>
-	public static final String FORMAT_${column.constantName} = DATE_TIME_FORMAT;
-	</#if>
-	</#list>
 	
 	<#list table.columns as column>
 	/**${column.columnAlias}*/
@@ -32,14 +27,7 @@ public class ${className} implements Base {
 
 <#macro generateJavaColumns>
 	<#list table.columns as column>
-		<#if column.isDateTimeColumn>
-	public String get${column.columnName}String() {
-		return date2String(get${column.columnName}(), FORMAT_${column.constantName});
-	}
-	public void set${column.columnName}String(String value) {
-		set${column.columnName}(string2Date(value, FORMAT_${column.constantName},${column.javaType}.class));
-	}
-		</#if>	
+	
 	public void set${column.columnName}(${column.javaType} value) {
 		this.${column.columnNameLower} = value;
 	}
@@ -47,6 +35,7 @@ public class ${className} implements Base {
 	public ${column.javaType} get${column.columnName}() {
 		return this.${column.columnNameLower};
 	}
+	
 	</#list>
 </#macro>
 

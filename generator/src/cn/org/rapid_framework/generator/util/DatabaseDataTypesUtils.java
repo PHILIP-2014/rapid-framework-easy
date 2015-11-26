@@ -73,25 +73,25 @@ public class DatabaseDataTypesUtils {
    static {
       _preferredJavaTypeForSqlType.put(Types.TINYINT, "java.lang.Byte");
       _preferredJavaTypeForSqlType.put(Types.SMALLINT, "java.lang.Short");
-      _preferredJavaTypeForSqlType.put(Types.INTEGER, "java.lang.Integer");
-      _preferredJavaTypeForSqlType.put(Types.BIGINT, "java.lang.Long");
+      _preferredJavaTypeForSqlType.put(Types.INTEGER, "Integer");
+      _preferredJavaTypeForSqlType.put(Types.BIGINT, "Long");
       _preferredJavaTypeForSqlType.put(Types.REAL, "java.lang.Float");
       _preferredJavaTypeForSqlType.put(Types.FLOAT, "java.lang.Double");
       _preferredJavaTypeForSqlType.put(Types.DOUBLE, "java.lang.Double");
-      _preferredJavaTypeForSqlType.put(Types.DECIMAL, "java.math.BigDecimal");
+      _preferredJavaTypeForSqlType.put(Types.DECIMAL, "BigDecimal");
       _preferredJavaTypeForSqlType.put(Types.NUMERIC, "java.math.BigDecimal");
-      _preferredJavaTypeForSqlType.put(Types.BIT, "java.lang.Boolean");
-      _preferredJavaTypeForSqlType.put(Types.BOOLEAN, "java.lang.Boolean");
-      _preferredJavaTypeForSqlType.put(Types.CHAR, "java.lang.String");
-      _preferredJavaTypeForSqlType.put(Types.VARCHAR, "java.lang.String");
+      _preferredJavaTypeForSqlType.put(Types.BIT, "Boolean");
+      _preferredJavaTypeForSqlType.put(Types.BOOLEAN, "Boolean");
+      _preferredJavaTypeForSqlType.put(Types.CHAR, "String");
+      _preferredJavaTypeForSqlType.put(Types.VARCHAR, "String");
       // according to resultset.gif, we should use java.io.Reader, but String is more convenient for EJB
-      _preferredJavaTypeForSqlType.put(Types.LONGVARCHAR, "java.lang.String");
+      _preferredJavaTypeForSqlType.put(Types.LONGVARCHAR, "String");
       _preferredJavaTypeForSqlType.put(Types.BINARY, "byte[]");
       _preferredJavaTypeForSqlType.put(Types.VARBINARY, "byte[]");
       _preferredJavaTypeForSqlType.put(Types.LONGVARBINARY, "byte[]");
-      _preferredJavaTypeForSqlType.put(Types.DATE, "java.sql.Date");
+      _preferredJavaTypeForSqlType.put(Types.DATE, "Date");
       _preferredJavaTypeForSqlType.put(Types.TIME, "java.sql.Time");
-      _preferredJavaTypeForSqlType.put(Types.TIMESTAMP, "java.sql.Timestamp");
+      _preferredJavaTypeForSqlType.put(Types.TIMESTAMP, "Date");
       _preferredJavaTypeForSqlType.put(Types.CLOB, "java.sql.Clob");
       _preferredJavaTypeForSqlType.put(Types.BLOB, "java.sql.Blob");
       _preferredJavaTypeForSqlType.put(Types.ARRAY, "java.sql.Array");

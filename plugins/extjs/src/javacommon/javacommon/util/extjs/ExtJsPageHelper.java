@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.StringUtils;
 import org.springframework.web.util.WebUtils;
 
 import cn.org.rapid_framework.page.PageRequest;

@@ -1,9 +1,9 @@
 package cn.org.rapid_framework.generator.util;
 
 import java.util.Enumeration;
+import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.Set;
-import java.util.Map.Entry;
 
 public class PropertiesHelper {
 	Properties p;

@@ -6,7 +6,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
 
-<mapper namespace="com.philip.client.dao.${className}Dao">
+<mapper namespace="com.church.visit.dao.${className}Dao">
 	<!-- 用于select查询公用抽取的列 -->
 	<sql id="commonColumns">
 	    <![CDATA[
@@ -17,7 +17,7 @@
 	</sql>
     
 	<!-- 新增记录 -->
-	<insert id="insert" parameterType="com.philip.client.model.${className}" useGeneratedKeys="true" keyProperty="<#list table.columns as column><#if column.pk>${column.columnNameLower}</#if></#list>" >
+	<insert id="insert" parameterType="com.church.visit.model.${className}" useGeneratedKeys="true" keyProperty="<#list table.columns as column><#if column.pk>${column.columnNameLower}</#if></#list>" >
     <![CDATA[
         INSERT INTO ${table.sqlName} (
         <#list table.columns as column>
@@ -35,7 +35,7 @@
     </insert>
 	
 	<!-- 更新记录 -->
-	<update id="updateById" parameterType="com.philip.client.model.${className}">
+	<update id="updateById" parameterType="com.church.visit.model.${className}">
         UPDATE ${table.sqlName}
         <set>
 			<#list table.columns as column>
@@ -54,7 +54,7 @@
     </update>
 
 	<!-- 根据主键查询 -->
-    <select id="getById" parameterType="java.lang.Long" resultType="com.philip.client.model.${className}">
+    <select id="getById" parameterType="java.lang.Long" resultType="com.church.visit.model.${className}">
 	    select <include refid="commonColumns"/>
 	    <![CDATA[ from ${table.sqlName} where 
 				<#list table.compositeIdColumns as column>
