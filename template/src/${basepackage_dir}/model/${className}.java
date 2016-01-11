@@ -6,7 +6,7 @@ package ${basepackage}.model;
 /**
  * ${table.tableAlias}
  */
-public class ${className} implements Base {
+public class ${className} extends Base {
 		
 	/**
 	 * 
