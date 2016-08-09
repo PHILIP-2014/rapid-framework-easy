@@ -28,3 +28,8 @@ Java日期转换的特殊处理,与My97DatePicker集成
 整个项目尽量做到最小集,无需删除任何资源,拿来即可使用.
 友好的MIT-Licence
 
+************
+ 使用说明
+************
+主要目录：generator
+主要配置文件：generator.properties
